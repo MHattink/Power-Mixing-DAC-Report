@@ -1,7 +1,0 @@
-<<<<<<< HEAD
-hoi
-
-khckytvub
-=======
-hoi
->>>>>>> 8fc9d3047cadb06f2eb0369c6eaa7506870651e5
