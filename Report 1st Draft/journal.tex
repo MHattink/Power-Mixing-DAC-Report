@@ -1,0 +1,74 @@
+%% journal.tex
+%% V1
+
+\input{header}
+
+%%%%%%	ABSTRACT
+\begingroup
+\obeylines
+\input{textfiles/abstract.tex}
+\endgroup
+
+\IEEEpeerreviewmaketitle
+
+\IEEEpubidadjcol
+
+%%%%%%	INTRODUCTION
+\begingroup
+\obeylines
+\input{textfiles/introduction.tex}
+\endgroup
+
+%%%%%%	SYSTEM OVERVIEW
+\begingroup
+\obeylines
+\input{textfiles/systemoverview.tex}
+\endgroup
+
+%%%%%%	SYSTEM COMPONENTS
+\section{System Components}
+
+%%%%%%	DIGITAL FRONTEND
+\begingroup
+\obeylines
+\input{textfiles/digitalfrontend.tex}
+\endgroup
+
+%%%%%%	MIXERS
+\begingroup
+\obeylines
+\input{textfiles/mixers.tex}
+\endgroup
+
+%%%%%%	LEVELSHIFTER
+\begingroup
+\obeylines
+\input{textfiles/levelshifter.tex}
+\endgroup
+
+%%%%%%	CURRENTSOURCES
+\begingroup
+\obeylines
+\input{textfiles/currentsources.tex}
+\endgroup
+
+%%%%%%	SIMULATIONS
+\begingroup
+\obeylines
+\input{textfiles/simulations.tex}
+\endgroup
+
+%%%%%%	CONCLUSION
+\begingroup
+\obeylines
+\input{textfiles/conclusion.tex}
+\endgroup
+
+
+
+\section*{Acknowlegdements}
+G. Radulov
+\bibliography{./journal}
+\bibliographystyle{./IEEEtran}
+
+\end{document}

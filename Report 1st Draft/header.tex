@@ -1,0 +1,86 @@
+\documentclass[10pt,conference]{IEEEtran}
+
+\IEEEoverridecommandlockouts
+% Used space can be reduced by tweaking line 4478 of the .cls template file :)
+%\IEEEpubid{\makebox[\columnwidth]{\hfill 978-3-9815370-0-0/DATE13/\copyright2014 EDAA} \hspace{\columnsep}\makebox[\columnwidth]{ }}
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  \graphicspath{{img/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  \graphicspath{{img/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  \DeclareGraphicsExtensions{.eps}
+\fi
+
+\usepackage[cmex10]{amsmath}
+\usepackage{array}
+\usepackage{paralist}
+\usepackage{cite}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{acronym} % Automated abbreviations
+\usepackage[table]{xcolor}
+\usepackage{url}
+\usepackage{tabularx}
+
+\pdfinfo{
+   /Author (P. Anrooij, R. Bonten, M. Hattink, F. Smits )
+   /Title  (Power Mixing DAC)
+%   /Subject (Bringing stereo sound to real-time CompSOC platform)
+ %  /Keywords (Virtual, Composable, CompSOC)
+}
+
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{grayl}{rgb}{0.8,0.8,0.8}
+
+% Abbreviations:
+\acrodef{SoCs}[SoCs]{Systems-on-Chips}
+
+% Utilities:
+\newcommand{\bulletversion}[1]{{\color{black} #1}}
+\newcommand{\oldbulletversion}[1]{{\color{gray} #1}}
+\newcommand{\redcomment}[1]{{\color{red} \emph{#1}}}
+\newcommand{\citn}[1]{{\color{blue} \emph{$^\text{citation needed}$}}}
+\newcommand{\todo}[1]{{\color{blue} \emph{TODO: #1}}}
+\newcommand{\bluecomment}[1]{{\color{blue} \emph{#1}}}
+\newcommand{\graycomment}[1]{{\color{gray} \emph{#1}}}
+\newcommand{\hide}[1]{}
+
+% correct bad hyphenation here
+%\hyphenation{op-tical net-works semi-conduc-tor}
+
+% Note: -2em vspace applied to figures + table
+\renewcommand{\baselinestretch}{0.95}
+\newcommand{\reducespace}{{\vspace{-1.7em}}}
+\newcommand{\reducefigtocapspace}{{\vspace{-0.2em}}}
+\newcommand{\reducetablespace}{{\vspace{-2em}}}
+\newcommand{\reducecaptotablespace}{{\vspace{-0.5em}}}
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{Power Mixing DAC}
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{\IEEEauthorblockN{P. Anrooij, R. Bonten, M. Hattink, F. Smits}
+\IEEEauthorblockA{Eindhoven University of Technology, Eindhoven, The Netherlands}}
+
+% make the title area
+\maketitle
