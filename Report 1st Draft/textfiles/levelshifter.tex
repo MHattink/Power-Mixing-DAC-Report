@@ -11,3 +11,10 @@ In~\cite{powerdac} a design for the levelshifter was proposed, but they were not
  \label{fig:schematic_levelshifter}
 \end{figure}
 The chosen design is a modified version of the one proposed in~\cite{powerdac} and is shown in Fig.~\ref{fig:schematic_levelshifter}. The inputs are connected to the gates of the low voltage transistors M5 and M6 and have an input range of 0V(off) to 1.1V(on). For correct operation VIN and \textoverline{VIN} must be each other's logical inverse. VBIAS is set to ??V and is connected to the gates of M3 and M4. These transistors protect M5 and M6 from the high supply voltage. M1 and M2 provide an positive feed back loop, which makes the circuit function. Its operation is explained using a low to high transition, so initially VIN is 0V, \textoverline{VIN} is 1.1V, VOUT is on its off value and \textoverline{VOUT} is 2V. In this situation only the right branch is conducting current, because \textoverline{VIN} is high and since there is no current in the left branch \textoverline{VOUT} is low. When VIN transitions to a high state, it starts conducting current, forcing VM5 to go a bit higher, as well as \textoverline{VOUT}. Because \textoverline{VOUT} increases, the current through the right branch decreases as well as VOUT. The decreased VOUT makes the left branch conduct more current and \textoverline{VOUT} go higher. Due to this postive feedback loop VOUT will go to VDD.
+
+Early simulation results are shown in Fig.~\ref{fig:levelshifter_first_sim}. It shows that the circuit should be able to function. However in this simulation it is till far to slow with a rise time of about 200 ps, while it is not loaded by the output stage. In the final implementation it should operate at a frequency of 2 GHz, which means that it should be able to transition from low to high and back every 500 ps. This is still being worked on and an issue for further investigation.
+\begin{figure}[h]
+ \includegraphics[width=0.5\textwidth]{levelshiter_first_sim}
+ \caption{Early simulation results of the levelshifter}
+ \label{fig:levelshifter_first_sim}
+\end{figure}
