@@ -3,7 +3,7 @@ The architecture of this differential system can be separated in several functio
 PLAATJE
 Whereby the DAC translates a 15 bit unary coded digital signal with a sample frequency of maximum 500MHz to an analogue signal. There is chosen for unary coding to increase linearity compared to binary coded signals. One of the reasons is that in the creation process of the transistors, it is more precise to make to transistors of the same size, than to make one with exactly two times the size. This means that the maximum theoretical SNR is 25.8dB.
 SNR = 6.02 x n + 1.761 = 25.841dB 
-The mixer works with a square wave, 2 GHz local oscillator (LO) frequency. The mixer can be divided in two types. The p-type and the n-type, where the p-type consist out of a flip-flop and a NAND and the n-type out of a flip-flop and a NOR.
+The mixer will synchronised the data and up-modulate it with a local oscillator of a 2 GHz square wave. To synchronise the date, a D flip flops will be used. The D flip flop will have two outputs: Q and Q bar. Q will be connect to a NAND port that will mix the LO signal and this signal goes to the level shifter that goes to the PMOS of the end stage.  The Q bar will be connected to the NOR port that is connected to the level shifter that goes to the NMOS of the end stage.
 The level shifter is responsible for the change of the 1.1V power supply for the thin-oxide transistors to the 5V power supply for the thick-oxide transistors.
 The final functional block of this design, the amplifier, should provide enough output power to drive the antenna. The specified output current is 50mA, which means that the output power on the 50 ohm matched antenna should be 20.97dBm.
 The aim is to get a IMD3 of at least … and an efficiency of … 
