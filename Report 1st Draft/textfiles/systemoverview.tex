@@ -1,2 +1,11 @@
 \section{Hardware module}\label{sec:overview}
-For this design there is chosen to create a system on chip (SoC) of a traditional DAC, mixer and power amplifier (PA), because this leads to several advantages. One thing is that it results in a more compact solution. A compact solution allows the system to be faster, because there are less parasitic capacitances between the structures. Also the need of matching to 50 ohm between these structures becomes superfluous. Using a SoC solution has a disadvantage that it is hard to generate high power, this generates heat which can damage the SoC. Moreover the use of large capacitors or inductors is not possible.
+The architecture of this differential system can be separated in several functional blocks: the DAC, mixer, level shifter and amplifier.
+PLAATJE
+Whereby the DAC translates a 15 bit unary coded digital signal with a sample frequency of maximum 500MHz to an analogue signal. There is chosen for unary coding to increase linearity compared to binary coded signals. One of the reasons is that in the creation process of the transistors, it is more precise to make to transistors of the same size, than to make one with exactly two times the size. This means that the maximum theoretical SNR is 25.8dB.
+SNR = 6.02 x n + 1.761 = 25.841dB 
+The mixer works with a square wave, 2 GHz local oscillator (LO) frequency. The mixer can be divided in two types. The p-type and the n-type, where the p-type consist out of a flip-flop and a NAND and the n-type out of a flip-flop and a NOR.
+The level shifter is responsible for the change of the 1.1V power supply for the thin-oxide transistors to the 5V power supply for the thick-oxide transistors.
+The final functional block of this design, the amplifier, should provide enough output power to drive the antenna. The specified output current is 50mA, which means that the output power on the 50 ohm matched antenna should be 20.97dBm.
+The aim is to get a IMD3 of at least … and an efficiency of … 
+Sensitivity…
+Noise Floor…
