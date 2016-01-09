@@ -1,8 +1,9 @@
 \section{Hardware module}\label{sec:overview}
-The architecture of this differential system can be separated in several functional blocks: the DAC, mixer, level shifter and amplifier.
-PLAATJE
-Whereby the DAC translates a 15 bit unary coded digital signal with a sample frequency of maximum 500MHz to an analogue signal. There is chosen for unary coding to increase linearity compared to binary coded signals. One of the reasons is that in the creation process of the transistors, it is more precise to make to transistors of the same size, than to make one with exactly two times the size. This means that the maximum theoretical SNR is 25.8dB.
-SNR = 6.02 x n + 1.761 = 25.841dB 
-The mixer will synchronised the data and up-modulate it with a local oscillator of a 2 GHz square wave. To synchronise the date, a D flip flops will be used. The D flip flop will have two outputs: Q and Q bar. Q will be connect to a NAND port that will mix the LO signal and this signal goes to the level shifter that goes to the PMOS of the end stage.  The Q bar will be connected to the NOR port that is connected to the level shifter that goes to the NMOS of the end stage.
-The level shifter is responsible for the change of the 1.1V power supply for the thin-oxide transistors to the 5V power supply for the thick-oxide transistors.
-The final functional block of this design, the amplifier, should provide enough output power to drive the antenna. The specified output current is 50mA, which means that the output power on the 50 ohm matched antenna should be 20.97dBm. The aim is to get a IMD3 of at least 30dBc.
+When looking deeper in Fig. ~\ref{fig:traditional}b, the architecture of the Power-Mixing-DAC becomes clear. It is differential composed out of several functional blocks: a digital front end structure, a level shifter and an amplifier. 
+The digital front end synchronizes the data and modulates it with a local oscillator of a 2 GHz square wave. To synchronise the data, D flip flops will be used. The D flip flop has two outputs: Q and \textoverline{Q}. A NAND mixes Q and LO for the PMOS end stage and a NOR mixes \textoverline{Q} and LO for the NMOS end stage. Before the mixed signals reach the final amplification stage, a level shifter translates the signal from a 1.2V $V_DD$ which are used for the thin-oxide transistors in the digital front end to a 5V $V_DD$ which is used in the final amplification stage. This amplifications stage provides the output power to the 50 ohm matched antenna.
+The Power-Mixing-DAC translates a 15 bit unary coded digital signal with a maximum frequency of maximum 500MHz to an analogue signal. Unary coded signals provide higher linearity compared to binary coded signals. One of the reasons is that in the creation process of the transistors, it is more precise to make to transistors of the same size, than to make one with exactly two times the size. Due to the maximum resolution of 16 the signal to noise ratio (SNR) is limited to a theoretical maximum of 25.8dB.
+\begin{equation}
+{SNR = 6.02 \times n + 1.76 = 25.8 dB}
+\label{eq:SNR}
+\end{equation}
+The specified output current is 50mA, which means that the output power on the 50 ohm matched antenna should be 20.97dBm. The aim is to get an IMD3 of at least 30dBc.
