@@ -26,17 +26,10 @@ Due to the local oscillator, the current will alternate between the path through
 The first design parameters are the voltage supply and the switching devices. Because the DAC should be able to produce 50mA through a 50$\Omega$ resistor, the maximum voltage drop will be 2.5V. This already cancels out lower voltage supplies such as 1.2V and 2.5V. The resulting options are 3.3V and 5V. Because the stage consist of two current sources, the voltage headroom will be very limited in the 3.3V voltage supply. Therefore a 5V supply will be used as $V_{dd}$. This, along with the high switching speeds, limits the switching devices to the thick-oxide CMOS technology.\\
 Due to the thick-oxide CMOS technology, the width and length of the CMOS are the only parameters. The most straightforward design method subscribes that the CMOS should always be in saturation so that the current through the CMOS is nearly independent, without channel-length modulation taken into account, of the drain-source voltage of the CMOS. This is directly related to the output impedance of the the switched current source. Therefore Eq.~\ref{eq:Overdrive} should be valid whatever the drain-source voltage.\\
 
-\begin{equation}
-\label{eq:Overdrive}
-{V_{DS} > V_{TH} + V_{GS}}
-
-\end{equation}
+\begin{equation}\label{eq:Overdrive}{V_{DS} > V_{TH} + V_{GS}}\end{equation}
 
 The drain-source voltage of both the NMOS is minimal when the current through the resistor is maximal. This results in a minimum drain-source voltage of 1.25V. Because Eq.~\ref{eq:Overdrive} should be valid independent of the output, the maximum gate-source provided by the level shifter should be 1.95V, because the threshold voltage of the thick-oxide CMOS is 0.7V. Along with Eq.~\ref{eq:Drain current}, this would provide a viable current sink.
-\begin{equation}
-{I_D = \frac{1}{2}\mu_n C_{ox}\frac{W}{L}(V_{GS}-V_{TH})^2(1+\lambda V_{DS})}
-\label{eq:Drain current}
-\end{equation}
+\begin{equation}{I_D = \frac{1}{2}\mu_n C_{ox}\frac{W}{L}(V_{GS}-V_{TH})^2(1+\lambda V_{DS})}\label{eq:Drain current}\end{equation}
 So by designing a current sink which operates at a $V_{gs}$ of 1.95V, the  switching current sink wil always be in saturation. This provides a high output impedance and thus a high IMD3. Another advantage is the increase in efficiency.
 Due to the difference in mobility of electrons and holes, the mobility of a electron is three times higher than the mobility of a hole, the length of the NMOS transistor will be three times higher then the length of the PMOS transistor. Though an larger length has some advantages, decrease in mismatch en less noise, it also means a larger width to maintain the required current through the transistor. A larger width however, means increasing inputcapacitance. To decrease the needed specifications on the level shifter, the length of the PMOS has been chosen to be the minimum possible with the thick-oxide technology, i.e. 300nm. The length of the NMOS is then 900nm.\\
 The width of the NMOS transistors has been determined by a parametric sweep. The width can then be determined so that the current through the transistor is 3.3mA. With the circuit found in Fig. ~\ref{fig:NMOS_Width_Sweep} the result is found in Fig. ~\ref{fig:NMOS_Width_Sweep_Result}.
