@@ -8,12 +8,25 @@ The final stage of the power DAC are the current sources. They provide a differe
 \label{figure:Current_sources}
 \end{center}
 \end{figure}
-Due to the local oscillator, the current will alternate between the path through CS1 and CS4 (see Fig.~\ref{fig:CS1}) and the the path through C3 and C2. (see Fig.~\ref{fig:CS1}). 
+Due to the local oscillator, the current will alternate between the path through CS1 and CS4 (see Fig.~\ref{fig:CS1CS4}) and the the path through C3 and C2. (see Fig.~\ref{fig:CS3CS2}). 
 \begin{figure}
 \centering
-\includegraphics[width=0.5\textwidth]{Current_sources_1_2.png}
-\caption{The two different current transistion modes. Vdd is 5V.}
-\label{fig:CS1}
+%\begin{subfigure}{0.45\textwidth}
+%\centering
+\includegraphics[width=0.4\linewidth]{Current_sources_1.png}
+\subfigure[Current_sources_1.png]{%
+\includegraphics[width=0.4\linewidth]{Current_sources_1.png}
+\caption{One current-steered cycle.}
+\label{fig:CS1CS4}}
+%\end{subfigure}
+\quad
+%\begin{subfigure}{0.45\textwidth}
+%\centering
+%\includegraphics[width=0.4\linewidth]{Current_sources_2.png}
+\subfigure[Current_sources_2.png]{%
+\caption{The other current-steered cycle. Vdd is 5V and the maximum current is 50mA.}
+\label{fig:CS3CS2}}
+%\end{subfigure}
 \end{figure}
 The first design parameters are the voltage supply and the switching devices. Because the DAC should be able to produce 50mA through a 50$\Omega$ resistor, the maximum voltage drop will be 2.5V. This already cancels out lower voltage supplies such as 1.2V and 2.5V. The resulting options are 3.3V and 5V. Because the stage consist of two current sources, the voltage headroom will be very limited in the 3.3V voltage supply. Therefore a 5V supply will be used as $V_{dd}$. This, along with the high switching speeds, limits the switching devices to the thick-oxide CMOS technology.\\
 Due to the thick-oxide CMOS technology, the width and length of the CMOS are the only parameters. The most straightforward design method subscribes that the CMOS should always be in saturation so that the current through the CMOS is nearly independent, without channel-length modulation taken into account, of the drain-source voltage of the CMOS. This is directly related to the output impedance of the the switched current source. Therefore Eq.~\ref{eq:Overdrive} should be valid whatever the drain-source voltage.\\
@@ -24,26 +37,27 @@ The drain-source voltage of both the NMOS is minimal when the current through th
 \begin{equation}{I_D = \frac{1}{2}\mu_n C_{ox}\frac{W}{L}(V_{GS}-V_{TH})^2(1+\lambda V_{DS})}\label{eq:Drain current}\end{equation}
 So by designing a current sink which operates at a $V_{gs}$ of 1.95V, the  switching current sink will always be in saturation. This provides a high output impedance and thus a high IMD3. Another advantage is the increase in efficiency.
 The thick-oxide technology however, limits other parameters. The length of the thick-oxide CMOS transistor has as minimum of 200nm when the maximum available voltage headroom is 2.5V. In this configuration however, the maximum available voltage headroom needs to be minimal 2.5V. This limits the length of the transistor to a minimum of 300nm. Though an larger length has some advantages, decrease in mismatch en less noise, it also means a larger width to maintain the required current through the transistor. A larger width however, means increasing inputcapacitance. To decrease the needed specifications on the level shifter, the length of both the PMOS ans the NMOS has been chosen to be optimized within the thick-oxide technology, i.e. 300nm.\\
-\begin{figure}[ht!]
+The last parameter is the width of the transistors.
+The width of the NMOS transistors has been determined by a parametric sweep. The width can then be determined so that the current through the transistor is 3.3mA. With the circuit found in Fig. ~\ref{fig:NMOS_Width_Sweep} the result is found in Fig. ~\ref{fig:NMOS_Width_Sweep_Result}.
+\begin{figure}
 \begin{center}
 \includegraphics[width=0.1\textwidth]{NMOS_END_STAGE.png}
 \caption{The circuit used to determine the required width of the transistor to sink 3.3mA. $V_{DS}$ is 2.4167V and $V_{GS}$ is 1.95V.}
 \label{fig:NMOS_Width_Sweep}
 \end{center}
 \end{figure}
-The primary focus on each transistor is to make sure that it is able to handle the needed amount of current. As has been mentioned before, due to the channel-length modulation, M1 must be able to handle more current when the load is conducting 50mA as M15. Therefore every transistor has to be redesigned. The first transistor has been designed with the circuit found in Fig.\ref{fig:NMOS_Width_Sweep}. With this circuit a parametric sweep will be conducted to find the minimum width, to decrease the input capacitance of the transistor, to be able to conduct the required amount of current. This parametric sweep can be found in ~\ref{fig:NMOS_Width_Sweep_Result}.
-\begin{figure}[ht!]
+The primary focus on each transistor is to make sure that it is able to handle the 
+\begin{figure}
 \begin{center}
 \includegraphics[width=0.4\textwidth]{NMOS_M1.png}
-\caption{The current through the transistor versus its width. To make sure that the current through the transistor is 3.3mA, the width should be 10.96um.}
+\caption{The current through the transistor versus its width. To make sure that the current through the transistor is 3.3mA, the width should be 30um.}
 \label{fig:NMOS_Width_Sweep_Result}
 \end{center}
 \end{figure}
-So the width of the first NMOS should be 10.96um to guarantee that it will sink 3.3mA when the $V_{GS}$ is 1.95V.\\
-For the second transistor, a similar approach has been taken. Because the drain-source current will decrease, the current through M1 will increase. Therefore the second transistor is placed in parallel with M1, as it will be in the final design, and the width of the second transistor will be swept so that the transistors together will conduct 6.66mA. This technique will be repeated for each transistor. The list of all width and lengths of all NMOS thick-oxide transistors can be found in the appendix, table ~\ref{Tab:NMOS}.
+So the width of the first NMOS should be 30um to guarantee that it will sink 3.3mA when the $V_{GS}$ is 1.95V. Due to the channel-length modulation, it is not sufficient to copy the transistor 15 times. So to determine the width of the second transistor, another transistor will be added to the circuit in Fig. ~\ref{fig:NMOS_Width_Sweep} and the $V_{out-}$ will be altered to 2.333V. Then the sweep will take place again until the width has been found for which the circuit sinks 6.667mA. This will be repeated until 15 transistor are switched in parallel and are able to sink 50mA. The list of all widths can be found in table ~\ref{Tab:NMOS} in the appendix.\\
 The same technique has been used for the PMOS transistors. Due to the dummy technology, which was not able to simulate width over 100um, each bit will be represented by to PMOS in parallel so that the width is maintained within the 100um. This list can also be found in the appendix, table ~\ref{Tab:PMOS}.\\
 
-When all of these transistors are designed in a single set-up, that is a setup as seen in ~\ref{fig:CS1}, a sweep can be made through all bits. The results can be found in Fig. ~\ref{fig:Final_result}. However, due to the switching and imperfections in both the NMOS and the PMOS, a common-mode error is present in the current. This error is signal dependent, as can be seen in Fig.\ref{fig:Current_error}.
+When all of these transistors are designed in a single set-up, that is a setup as seen in ~\ref{fig:CS1CS4}, a sweep can be made through all bits. The results can be found in Fig. ~\ref{fig:Final_result}.
 \begin{figure}[ht!]
 \begin{center}
 \includegraphics[width=0.4\textwidth]{Current_Cycle_Endstage.png}
@@ -51,10 +65,5 @@ When all of these transistors are designed in a single set-up, that is a setup a
 \label{fig:Final_result}
 \end{center}
 \end{figure}
-\begin{figure}[ht!]
-\begin{center}
-\includegraphics[width=\linewidth]{End_stage_errors.png}
-\caption{The absolute and the relative current error in the endstage versus the input number of the DAC.}
-\label{fig:Current_error}
-\end{center}
-\end{figure}
+
+Next paper I will elaborate on the results with the chosen transistors. 
