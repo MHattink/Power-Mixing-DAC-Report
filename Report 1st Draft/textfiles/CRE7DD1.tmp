@@ -8,15 +8,15 @@ The final stage of the power-mixing DAC are the current sources. They provide a 
 \label{figure:Current_sources}
 \end{center}
 \end{figure}
-Due to the local oscillator, the current alternates between the path through CS1 and CS4 (see Fig.~\ref{fig:CS1} on the left) and the the path through C3 and C2. (see Fig.~\ref{fig:CS1} on the right). 
+Due to the local oscillator, the current alternates between the path through CS1 and CS4 (see Fig.~\ref{fig:CS1}) and the the path through C3 and C2. (see Fig.~\ref{fig:CS1}). 
 \begin{figure}
 \centering
-\includegraphics[width=0.3\textwidth]{Current_sources_1_2.png}
+\includegraphics[width=0.5\textwidth]{Current_sources_1_2.png}
 \caption{The two different current transition modes.}
 \label{fig:CS1}
 \end{figure}
 The first design parameters are the supply volage and the switching devices. Because the DAC should be able to produce 50mA through a 50$\Omega$ resistor, the maximum voltage drop will be 2.5V. This already cancels out lower voltage supplies such as 1.2V and 2.5V. The resulting options are 3.3V and 5V. Because the stage consist of two current sources, the voltage headroom will be very limited in the 3.3V voltage supply. Therefore a 5V supply will be used as $V_{DD}$. This, along with the high switching speeds, limits the switching devices to the thick-oxide CMOS technology.\\
-Due to the power-mixing DAC design, the width and length of the CMOS are the only parameters. The most straightforward design method subscribes that the CMOS should always be in saturation so that the current through the CMOS is nearly independent, without channel-length modulation taken into account, of the drain-source voltage of the CMOS. This is directly related to the output impedance of the the switched current source. Therefore Eq.~\ref{eq:Overdrive} should be valid whatever the drain-source voltage.
+Due to the power-mixing DAC design, the width and length of the CMOS are the only parameters. The most straightforward design method subscribes that the CMOS should always be in saturation so that the current through the CMOS is nearly independent, without channel-length modulation taken into account, of the drain-source voltage of the CMOS. This is directly related to the output impedance of the the switched current source. Therefore Eq.~\ref{eq:Overdrive} should be valid whatever the drain-source voltage.\\
 
 \begin{equation}\label{eq:Overdrive}{V_{DS} > V_{ON} = V_{GS} - V_{TH}}\end{equation}
 
@@ -24,7 +24,7 @@ The drain-source voltage of both the NMOS and PMOS are minimal when the current 
 \begin{equation}{I_D = \frac{1}{2}\mu_n C_{ox}\frac{W}{L}(V_{GS}-V_{TH})^2(1+\lambda V_{DS})}\label{eq:Drain current}\end{equation}
 So by designing a current sink which operates at a $V_{GS}$ of 1.95V, the switching current sink will always be either in saturation or off. This provides a high output impedance and thus a high IMD3. Another advantage is the increase in efficiency.\\
 For the PMOS the same design equations hold and thus they require a $V_{SG}$ of 1.95V to remain in saturation mode. So for the current source to provide current, the gate voltage should be witched between 3.05V (sourcing mode) and 5V (off mode).\\  
-The thick-oxide technology however, limits other parameters. The length of the thick-oxide CMOS transistor has as minimum of 200nm when the maximum available voltage headroom is 2.5V. In this configuration however, the maximum available voltage headroom needs to be minimal 2.5V. This limits the length of the transistor to a minimum of 300nm. Although a longer transistor has some advantages, such as a decrease in mismatch, it also mean a wider transistor to conduct the required current. A larger width however, results in higher input capacitance. To decrease the load on the level shifter, the length of both the PMOS ans the NMOS has been chosen to be optimized within the thick-oxide technology, i.e. 300nm.
+The thick-oxide technology however, limits other parameters. The length of the thick-oxide CMOS transistor has as minimum of 200nm when the maximum available voltage headroom is 2.5V. In this configuration however, the maximum available voltage headroom needs to be minimal 2.5V. This limits the length of the transistor to a minimum of 300nm. Although a longer transistor has some advantages, such as a decrease in mismatch, it also mean a wider transistor to conduct the required current. A larger width however, results in higher input capacitance. To decrease the load on the level shifter, the length of both the PMOS ans the NMOS has been chosen to be optimized within the thick-oxide technology, i.e. 300nm.\\
 \begin{figure}[ht!]
 \begin{center}
 \includegraphics[width=0.1\textwidth]{NMOS_END_STAGE.png}
