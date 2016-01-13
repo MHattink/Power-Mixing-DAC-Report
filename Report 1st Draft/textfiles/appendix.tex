@@ -1,5 +1,5 @@
-\section{Appendix}\label{sec:appendix}
-
+\begin{appendices}
+\section{}\label{sec:appendix}
 \begin{figure}[h]
 \includegraphics[width=0.5\textwidth]{Global_schematic_previous_group.jpg}
 \caption{Global schematic of the previous group.}
@@ -49,29 +49,58 @@
 \end{figure}
 
 \begin{table}[h!]
+\caption{This table lists the dimensions of the transistors in the levelshifter that drives the PMOS current sources.}
+\begin{tabular}{l||l|l}\arraybackslash
+Transistor & Width(um) & Length (nm) \\\hline\hline
+M1 & 20 & 200\\\hline
+M2 & 60 & 200\\\hline
+M3 & 10 & 350\\\hline
+M4 & 10 & 350\\\hline
+M5 & 1.2 & 50\\\hline
+M6 & 1.2 & 50
+\end{tabular}
+\label{Tab:Levelshifter_PMOS_sizes}
+\end{table}
+
+\begin{table}[h!]
+\caption{This table lists the dimensions of the transistors in the levelshifter that drives the NMOS current sources.}
+\begin{tabular}{l||l|l}\arraybackslash
+Transistor & Width(um) & Length (nm) \\\hline\hline
+M1 & 20 & 200\\\hline
+M2 & 60 & 200\\\hline
+M3 & 10 & 350\\\hline
+M4 & 10 & 350\\\hline
+M5 & 1.2 & 50\\\hline
+M6 & 1.2 & 50\\\hline
+M7 & 50 & 1700\\\hline
+M8 & 20 & 200
+\end{tabular}
+\label{Tab:Levelshifter_NMOS_sizes}
+\end{table}
+
+\begin{table}[h!]
 \caption{This table describes which widths and lengths are used for which NMOS transistors. M1 is the MOSFET which is associated with the lowest current while M15 is associated with the highest current.}
 \begin{tabular}{l||l|l}\arraybackslash
-
 NMOS & Width(um) & Length (um) \\\hline\hline
-M1 & 10.97 & 0.3\\\hline
-M2 & 11.47 & 0.3\\\hline
-M3 & 11.60 & 0.3\\\hline
-M4 &  11.53 & 0.3\\\hline
-M5 & 11.52 & 0.3\\\hline
-M6 & 11.63 & 0.3\\\hline
-M7 & 11.67 & 0.3\\\hline
-M8 & 11.71 & 0.3\\\hline
-M9 & 11.76 & 0.3\\\hline
-M10 & 11.83 & 0.3\\\hline
-M11 & 11.88 & 0.3\\\hline
-M12 & 11.96 & 0.3\\\hline
-M13 & 12.03 & 0.3\\\hline
-M14 & 12.11 & 0.3\\\hline
-M15 & 12.20 & 0.3
+M1 & 30.00 & 0.9\\\hline
+M2 & 30.17 & 0.9\\\hline
+M3 & 30.30 & 0.9\\\hline
+M4 &  30.30 & 0.9\\\hline
+M5 & 30.36 & 0.9\\\hline
+M6 & 30.44 & 0.9\\\hline
+M7 & 30.49 & 0.9\\\hline
+M8 & 30.57 & 0.9\\\hline
+M9 & 30.66 & 0.9\\\hline
+M10 & 30.74 & 0.9\\\hline
+M11 & 30.83 & 0.9\\\hline
+M12 & 30.95 & 0.9\\\hline
+M13 & 31.05 & 0.9\\\hline
+M14 & 31.18 & 0.9\\\hline
+M15 & 31.33 & 0.9
 \end{tabular}
 \label{Tab:NMOS}
 \end{table}
-\begin{table}[h!]
+\begin{table}
 \caption{This table describes which widths and lengths are used for which PMOS transistors. M1 is the MOSFET which is associated with the lowest current while M15 is associated with the highest current.} 
 \begin{tabular}{l||l|l}
 PMOS & Width(um) & Length (um) \\\hline\hline
@@ -111,3 +140,4 @@ M15 & 61.87 & 0.3
 \caption{Two tone output current}
 \label{transient_two_tone}
 \end{figure}
+\end{appendices}
