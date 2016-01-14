@@ -49,8 +49,6 @@
  \label{fig:NAND_nmos_sweep_figure}
 \end{figure}
 
-
-
 \begin{figure}[h]
 \includegraphics[width=0.35\textwidth]{NOR_schematic.pdf}
 \caption{The schematic of the NOR gate.}
@@ -139,6 +137,14 @@ M8 & 25 & 200
 \label{Tab:Levelshifter_NMOS_sizes}
 \end{table}
 
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.1\textwidth]{NMOS_END_STAGE.png}
+\caption{The circuit used to determine the required width of the transistor to sink 3.3mA. $V_{DS}$ is 2.4167V and $V_{GS}$ is 1.95V.}
+\label{fig:NMOS_Width_Sweep}
+\end{center}
+\end{figure}
+
 \begin{table}[h!]
 \caption{This table describes which widths and lengths are used for which NMOS transistors. M1 is the MOSFET which is associated with the lowest current while M15 is associated with the highest current.}
 \begin{tabular}{l||l|l}\arraybackslash
@@ -161,6 +167,7 @@ M15 & 12.20 & 0.3
 \end{tabular}
 \label{Tab:NMOS}
 \end{table}
+
 \begin{table}
 \caption{This table describes which widths and lengths are used for which PMOS transistors. M1 is the MOSFET which is associated with the lowest current while M15 is associated with the highest current.} 
 \begin{tabular}{l||l|l}
