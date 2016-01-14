@@ -48,23 +48,10 @@ With all the transistors sizes chosen, the critical point can be measured to mea
 
 \subsubsection{NAND and NOR gates}\label{sec:frontend}
 The NAND and NOR gates mix LO signal with the data from the D flip-flop. This happens with an LO signal consisting of a 2GHz square wave.
-The design of a NAND and NOR is shown in Fig.~\ref{fig:NAND_schematic_figure} and Fig.~\ref{fig:NOR_schematic_figure}.
 
-\begin{figure}[h]
-\includegraphics[width=0.4\textwidth]{NAND_schematic.pdf}
-\caption{The schematic of the NAND gate.}
-\label{fig:NAND_schematic_figure}
-\end{figure}
+The NAND gate has two PMOS transistors in parallel and 2 NMOS transistors in series. The schematic is shown in Appendix A, Fig.~\ref{fig:NAND_schematic_figure}. In a normal CMOS inverter the width of the PMOS transistors is 2 to 3 times larger than the NMOS transistors, because the mobility of the NMOS transistor is larger than the PMOS transistor. The size of the PMOS transistor is 50nm x 180nm (length x width). In this situation two NMOS transistors are in series. The width of the NMOS has been determined with a parameter sweep and the length is set to 50nm. The result is shown in Appendix A, Fig.~\ref{fig:NAND_nmos_sweep_figure}. The optimal value for the width is 180nm is, because it has the same fall and rise times. The size of the NMOS transistor and PMOS transistor is 50nm x 180nm (length x width).
 
-The NAND gate has two PMOS transistors in parallel and 2 NMOS transistors in series. The schematic is shown in Fig.~\ref{fig:NAND_schematic_figure}. In a normal CMOS inverter the width of the PMOS transistors is 2 to 3 times larger than the NMOS transistors, because the mobility of the NMOS transistor is larger than the PMOS transistor. The size of the PMOS transistor is 50nm x 180nm (length x width). In this situation two NMOS transistors are in series. The width of the NMOS has been determined with a parameter sweep and the length is set to 50nm. The result is shown in Appendix A, Fig.~\ref{fig:NAND_nmos_sweep_figure}. The optimal value for the width is 180nm is, because it has the same fall and rise times. The size of the NMOS transistor and PMOS transistor is 50nm x 180nm (length x width).
-
-\begin{figure}[h]
-\includegraphics[width=0.35\textwidth]{NOR_schematic.pdf}
-\caption{The schematic of the NAND gate.}
-\label{fig:NOR_schematic_figure}
-\end{figure}
-
-The NOR gate has two PMOS transistors in series and 2 NMOS transistors in parallel.The schematic is shown in Fig.~\ref{fig:NOR_schematic_figure}. The size of the NMOS transistor is set on the smallest size of a NMOS transistor: 50nm x 90nm (length x width). The width of the PMOS transistor is determined with a parameter sweep and the length is set to 50nm. The result is shown in Appendix, Fig.~\ref{fig:NOR_pmos_sweep_figure}. The optimal value for the width is 280nm is, because it has the same fall and rise time. The size of the PMOS transistor is 50nm x 280nm (length x width).
+The NOR gate has two PMOS transistors in series and 2 NMOS transistors in parallel.The schematic is shown in Appendix A, Fig.~\ref{fig:NOR_schematic_figure}. The size of the NMOS transistor is set on the smallest size of a NMOS transistor: 50nm x 90nm (length x width). The width of the PMOS transistor is determined with a parameter sweep and the length is set to 50nm. The result is shown in Appendix, Fig.~\ref{fig:NOR_pmos_sweep_figure}. The optimal value for the width is 280nm is, because it has the same fall and rise time. The size of the PMOS transistor is 50nm x 280nm (length x width).
 
 Remark
 In the simulation the load of the level shifter is increased. The NAND gates and NOR gates cannot provide the required current to drive the levels shifter, therefore a CMOS buffer is placed behind the NAND and NOR gate. The width of the PMOS transistor is set on 900nm and the NMOS transistor is set on 500nm. The results of the buffer is shown Appendix A, Fig. Fig.~\ref{fig:Results_of_NAND_NOR_with_buffer_figure}.
