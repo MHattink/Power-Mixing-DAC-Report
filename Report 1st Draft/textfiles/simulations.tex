@@ -9,7 +9,7 @@ Next, a DFT of the output voltage is simulated to see the spectral content of th
 Furthermore, a two tone test is simulated. The period time of the second tone fits 14 times in the simulation time, which means that the data frequency of the second tone is equal to 54.69 MHz see Fig. ~\ref{fig:Vout_two_tone}. A two tone test is useful test the linearity of the DAC, non-linear behaviour generates intermodulation products at the output of the DAC. The power of these intermodulation products should be low, because they interfere with the modulated data tones. Especially the third intermodulation product (IM3), because the IM3 frequencies are very close to the fundamental frequency (at $2f_2-f_1$ and $2f_1-f_2$). It is almost impossible to filter the IM3 noise out of the output signal, therefore it is better to prevent creating IM3 noise. There are more options to express the amount of IM products. For example the spurious-free dynamic range (SFDR) describes power of the fundamental signal to the strongest spurious signal at the output, which is in this case the IM3. Whereas IMD3 describes the difference of the fundamental signal and the IM3.~\ref{fig:DFT_two_tone}
 \begin{figure}[h] 
 \includegraphics[width=0.5\textwidth]{DFT_two_tone.png}
-\caption{The output power spectrum of a two tone test shows a IMD3 of 44.88dBc.}
+\caption{The output power spectrum of a two tone test shows a IMD3 of 22.59 dBc.}
 \label{fig:DFT_two_tone}
 \end{figure}
 
