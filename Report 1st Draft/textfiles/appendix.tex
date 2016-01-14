@@ -2,49 +2,49 @@
 \section{}\label{sec:appendix}
 \begin{figure}[h]
 \includegraphics[width=0.5\textwidth]{Global_schematic_previous_group.jpg}
-\caption{Global schematic of the previous group.}
+\caption{Global schematic of the previous group.~\cite{powerdac}.}
 \label{fig:Global_schematic_previous_group_figure}
 \end{figure}
 
 \begin{figure}[h]
  \includegraphics[width=0.5\textwidth]{D_flip_flop_schematic.jpg}
- \caption{ D flip flop schematic from previous group}
+ \caption{ D flip flop schematic from previous group ~\cite{powerdac}.}
  \label{fig:D_flip_flop_ previous_group_figure}
 \end{figure}
 
 \begin{figure}[h]
  \includegraphics[width=0.5\textwidth]{Parameter_sweep_changing_w_high_to_low.jpg}
- \caption{Parametersweep of changing the width of the pmos when the data is low.}
+ \caption{A Parameter sweep of changing the width of the PMOS transistor when the data is low. The PMOS transistors of part 1,2 and 4 of~\ref{fig:D_flip_flop_schematic_figure} are part of the parameter sweep. The frequency of the clock is set to 1 GHz and the frequency of the data is set to 500MHz.} 
  \label{fig:parametersweep_changing_w_high_to_low_figure}
 \end{figure}
 
 \begin{figure}[h]
  \includegraphics[width=0.5\textwidth]{Parameter_sweep_changing_w_low_to_high.jpg}
- \caption{Parametersweep of changing the width of the pmos when the data is high.}
+ \caption{A Parameter sweep of changing the width of the PMOS transistor when the data is high. The PMOS transistors of part 1,2 and 4 of~\ref{fig:D_flip_flop_schematic_figure} are part of the parameter sweep. The frequency of the clock is set to 1 GHz and the frequency of the data is set to 500MHz.}
  \label{fig:parametersweep_changing_w_low_to_high_figure}
 \end{figure}
 
 \begin{figure}[h]
  \includegraphics[width=0.5\textwidth]{Parameter_sweep_changing_w_of_the_swiching_nmos_high_to_low.jpg}
- \caption{Parameter sweep of changing the width of the switching nmos when the data is low.}
+ \caption{Parameter sweep of changing the width of the NMOS transitor of part 3 in Fig.\ref{fig:D_flip_flop_schematic_figure} when the data is low.}
  \label{fig:Parameter_sweep_changing_w_of_the_swiching_nmos_high_to_low_figure}
 \end{figure}
 
 \begin{figure}[h]
  \includegraphics[width=0.5\textwidth]{Parameter_sweep_changing_w_of_the_swiching_nmos_low_to_high.jpg}
- \caption{Parameter sweep of changing the width of the switching nmos when the data is high}
+ \caption{Parameter sweep of changing the width of the NMOS transitor of part 3 in Fig.\ref{fig:D_flip_flop_schematic_figure} when the data is high.}
  \label{fig:Parameter_sweep_changing_w_of_the_swiching_nmos_low_to_high_figure}
 \end{figure}
 
 \begin{figure}[h]
  \includegraphics[width=0.5\textwidth]{NAND_nmos_sweep.jpg}
- \caption{Parameter sweep of changing the width nmos of the NAND.}
+ \caption{Parameter sweep of changing the width NMOS transistor of the NAND gate.}
  \label{fig:NAND_nmos_sweep_figure}
 \end{figure}
 
 \begin{figure}[h]
  \includegraphics[width=0.5\textwidth]{NOR_pmos_sweep.jpg}
- \caption{Parameter sweep of changing the width pmos of the NOR.}
+ \caption{Parameter sweep of changing the width NMOS transistor of the NOR gate.}
  \label{fig:NOR_pmos_sweep_figure}
 \end{figure}
 
@@ -53,6 +53,46 @@
  \caption{Results of the output of the NAND and NOR with a buffer.}
  \label{fig:Results_of_NAND_NOR_with_buffer_figure}
 \end{figure}
+
+\begin{table}[h!]
+\caption{This table lists the dimensions of the transistors of the D flip-flops.}
+\begin{tabular}{l||l|l}\arraybackslash
+Transistor & Width(nm) & Length (nm) \\\hline\hline
+M1 & 120 & 50\\\hline
+M2 & 120 & 50\\\hline
+M3 & 90 & 50\\\hline
+M4 & 90 & 50\\\hline
+M5 & 120 & 50\\\hline
+M6 & 120 & 50\\\hline
+M7 & 90 & 50\\\hline
+M8 & 90 & 50\\\hline
+M9 & 120 & 50\\\hline
+M10 & 90 & 50\\\hline
+M11 & 120 & 50\\\hline
+M12 & 90 & 50\\\hline
+M13 & 120 & 50\\\hline
+M14 & 90 & 50\\\hline
+M15 & 280 & 50\\\hline
+M16 & 280 & 50\\\hline
+M17 & 120 & 50\\\hline
+M18 & 120 & 50\\\hline
+M19 & 90 & 50\\\hline
+M20 & 90 & 50\\\hline
+M21 & 120 & 50\\\hline
+M22 & 90 & 50\\\hline
+M23 & 120 & 50\\\hline
+M24 & 90 & 50\\\hline
+M25 & 120 & 50\\\hline
+M26 & 120 & 50\\\hline
+M27 & 90 & 50\\\hline
+M28 & 90 & 50\\\hline
+M29 & 120 & 50\\\hline
+M30 & 90 & 50\\\hline
+M31 & 120 & 50\\\hline
+M32 & 90 & 50
+\end{tabular}
+\label{Tab:D_flip-flop_transistor_sizes}
+\end{table}
 
 \begin{table}[h!]
 \caption{This table lists the dimensions of the transistors in the levelshifter that drives the PMOS current sources.}
